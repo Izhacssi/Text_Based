@@ -2,6 +2,7 @@ import time
 import sys
 import random
 
+
 class Guardian:
     def __init__(self, name):
         self.name = name
@@ -19,12 +20,14 @@ class Guardian:
         ammo_consumed = random.randint(3, 8)
         self.ammo -= ammo_consumed
         enemy.health -= damage
-        print(f"{self.name} attacks with {self.weapon}! {enemy.name} takes {damage} damage.")
+        print(
+            f"{self.name} attacks with {self.weapon}! {enemy.name} takes {damage} damage.")
         print(f"Ammo consumed: {ammo_consumed}")
 
     def use_heal(self):
         print(f"{self.name} stands by. A healing wave fills your soul.")
-        heal_amount = random.randint(int(0.23 * self.max_health), int(0.35 * self.max_health))
+        heal_amount = random.randint(
+            int(0.23 * self.max_health), int(0.35 * self.max_health))
         self.health += heal_amount
         if self.health > self.max_health:
             self.health = self.max_health
@@ -51,6 +54,7 @@ class Guardian:
         else:
             print("You have no more dodge attempts left.")
 
+
 class Enemy:
     def __init__(self, name, health):
         self.name = name
@@ -60,6 +64,7 @@ class Enemy:
         damage = random.randint(5, 15)
         player.health -= damage
         print(f"{self.name} attacks! {player.name} takes {damage} damage.")
+
 
 def main():
     print("Destiny - Act 1: Awakening")
@@ -74,7 +79,7 @@ def main():
     time.sleep(3)
     print("A howl. Sharp. Like that of a monster.")
     time.sleep(3)
-    
+
     print("???: I know you don't know who I am, but I'll explain later.")
     print("You're a Guardian. Forged in Light.")
     time.sleep(3)
@@ -87,7 +92,8 @@ def main():
 
     name = input("What's your name?: ")
     player = Guardian(name)
-    enemy_types = ["Fallen Captain", "Fallen Vandal", "Fallen Dreg", "Fallen Shank"]
+    enemy_types = ["Fallen Captain", "Fallen Vandal",
+                   "Fallen Dreg", "Fallen Shank"]
     enemy = Enemy(random.choice(enemy_types), random.randint(50, 100))
 
     print(f"???: You don't strike me as a {player.name}, but sure.")
@@ -101,7 +107,8 @@ def main():
         print(f"\n{player.name}: Health - {player.health}, Ammo - {player.ammo}")
         print(f"{enemy.name}: Health - {enemy.health}")
 
-        action = input("\nChoose an action: (1) Attack, (2) Heal, (3) Melee, (4) Dodge, (5) Flee: ")
+        action = input(
+            "\nChoose an action: (1) Attack, (2) Heal, (3) Melee, (4) Dodge, (5) Flee: ")
 
         if action == "1":
             player.attack(enemy)
@@ -130,8 +137,11 @@ def main():
             print("Your Light is Consumed...")
             break
 
+
 if __name__ == "__main__":
     main()
 
-#Boogers
-#FeatureBoogers
+# Boogers
+# FeatureBoogers
+
+# Sup Chawchoe
