@@ -42,6 +42,7 @@ class Guardian:
             dodge_chance = random.randint(1, 100)
             if dodge_chance > 30:
                 print(f"{self.name} successfully dodges the enemy's attack!")
+                return "success"
             else:
                 print(f"{self.name} fails to dodge the enemy's attack!")
                 damage = random.randint(5, 15)
@@ -110,7 +111,8 @@ def main():
         elif action == "3":
             player.melee(enemy)
         elif action == "4":
-            player.dodge()
+            if player.dodge() == "success":
+                continue
         elif action == "5":
             flee_chance = random.randint(1, 100)
             if flee_chance <= 55:  # 55% chance to flee
